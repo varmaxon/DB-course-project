@@ -1,2 +1,4 @@
-data/
 venv/
+kibana*
+elastic*
+*result*
