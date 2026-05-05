@@ -57,9 +57,9 @@ def load_and_index(file_path, index_name):
             failed += 1
             errors.append(result)
     
-    print(f"✅ Индекс '{index_name}': загружено {success} документов")
+    print(f"ОК. Индекс '{index_name}': загружено {success} документов")
     if failed:
-        print(f"⚠️  Ошибок при загрузке: {failed}")
+        print(f"!!! Ошибок при загрузке: {failed}")
         # Покажем первую ошибку для диагностики
         if errors:
             print(f"   Пример ошибки: {errors[0]}")
@@ -102,11 +102,11 @@ if cars_count > 0:
     sample_car = es.get(index="cars", id="1")
     print(json.dumps(sample_car['_source'], ensure_ascii=False, indent=2))
 else:
-    print("\n⚠️  В индексе 'cars' нет документов")
+    print("\n!!!  В индексе 'cars' нет документов")
 
 if drivers_count > 0:
     print("\n--- Пример документа из 'drivers' ---")
     sample_driver = es.get(index="drivers", id="1")
     print(json.dumps(sample_driver['_source'], ensure_ascii=False, indent=2))
 else:
-    print("\n⚠️  В индексе 'drivers' нет документов")
+    print("\n!!!  В индексе 'drivers' нет документов")

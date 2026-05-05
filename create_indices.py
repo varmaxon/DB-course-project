@@ -4,7 +4,7 @@ from elasticsearch import Elasticsearch
 es = Elasticsearch("http://localhost:9200")
 
 # 2.1. ОПРЕДЕЛЕНИЕ АНАЛИЗАТОРА
-# Это блок "settings", который задаёт кастомный анализатор.
+# Это блок "settings", который задаёт анализатор.
 # По заданию:
 #   - токенизатор standard (русский язык)
 #   - фильтр lowercase (нижний регистр)
@@ -14,7 +14,7 @@ es = Elasticsearch("http://localhost:9200")
 settings = {
     "analysis": {
         "analyzer": {
-            "russian_analyzer": {           # имя нашего анализатора
+            "russian_analyzer": {           # имя анализатора
                 "type": "custom",
                 "tokenizer": "standard",    # стандартный токенизатор
                 "filter": [
